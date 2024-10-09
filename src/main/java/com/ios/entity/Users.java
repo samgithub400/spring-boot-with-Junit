@@ -1,14 +1,14 @@
 package com.ios.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class Users {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,14 +45,14 @@ public class User {
 		return "User [userId=" + userId + ", uerName=" + uerName + ", email=" + email + "]";
 	}
 
-	public User(int userId, String uerName, String email) {
+	public Users(int userId, String uerName, String email) {
 		super();
 		this.userId = userId;
 		this.uerName = uerName;
 		this.email = email;
 	}
 
-	public User() {
+	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

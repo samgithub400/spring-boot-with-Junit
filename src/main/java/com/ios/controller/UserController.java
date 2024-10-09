@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ios.entity.User;
+import com.ios.entity.Users;
 import com.ios.exception.UserNotFoundException;
 import com.ios.service.UserService;
 
@@ -23,12 +23,12 @@ public class UserController {
 	private UserService userService;
 	
 	@GetMapping("/getuserbyid/{userId}")
-	public User getUser(@PathVariable("userId") int userId) {
+	public Users getUser(@PathVariable("userId") int userId) {
 		return userService.getUser(userId);
 	}
 	
 	@PostMapping("/saveuser")
-	public User saveUser(@RequestBody User user) {
+	public Users saveUser(@RequestBody Users user) {
 		return userService.saveUser(user);
 	}
 	
@@ -38,12 +38,12 @@ public class UserController {
 	}
 	
 	@PutMapping("/updateUser/{userId}")
-	public User updateUser(@RequestBody User user,@PathVariable("userId") int userId) throws UserNotFoundException {
+	public Users updateUser(@RequestBody Users user,@PathVariable("userId") int userId) throws UserNotFoundException {
 		return userService.updateUser(user,userId);
 	}
 	
 	@GetMapping("/getallusers")
-	public List<User> getAllUsers() {
+	public List<Users> getAllUsers() {
 		return userService.getAllUsers();
 	}
 	
