@@ -1,5 +1,6 @@
 package com.ios.entity;
 
+<<<<<<< HEAD
 import java.util.Objects;
 
 public class Employee {
@@ -60,5 +61,8 @@ public class Employee {
 	}
 	
 	
+=======
+public class Employee {
+>>>>>>> 8fa7f4369403d3fd464d38d17eb824e3653d2985
 
 }

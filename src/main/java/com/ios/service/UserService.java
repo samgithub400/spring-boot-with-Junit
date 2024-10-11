@@ -25,7 +25,10 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
-	public ResponseEntity<String> deleteUserById(int userId) {
+	public ResponseEntity<String> deleteUserById(int userId) throws UserNotFoundException {
+		if (!userRepository.existsById(userId)) {
+			throw new UserNotFoundException("User Not Found With USerId : " + userId);
+		}
 		userRepository.deleteById(userId);
 		return new ResponseEntity<>("User Deleted..!", HttpStatus.NO_CONTENT);
 	}
@@ -33,6 +36,7 @@ public class UserService {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 	public User updateUser(User user, int userId) throws UserNotFoundException {
+<<<<<<< HEAD
 		User foundUser = userRepository.findById(userId)
 				.orElseThrow(() -> new UserNotFoundException("User Not Found With USerId : " + userId));
 =======
@@ -43,10 +47,14 @@ public class UserService {
 			throw new UserNotFoundException("User Not Found With USerId : " + userId);
 		}				
 >>>>>>> Stashed changes
+=======
+		if(!userRepository.existsById(userId)) {
+			throw new UserNotFoundException("User Not Found With USerId : " + userId);
+		}				
+>>>>>>> 8fa7f4369403d3fd464d38d17eb824e3653d2985
 
-		foundUser.setUerName(user.getUerName());
-		foundUser.setEmail(user.getEmail());
-		return userRepository.save(foundUser);
+		user.setUserId(userId);
+		return userRepository.save(user);
 
 	}
 
