@@ -1,6 +1,6 @@
 package com.ios.entity;
 
-<<<<<<< HEAD
+
 import java.util.Objects;
 
 public class Employee {
@@ -59,10 +59,6 @@ public class Employee {
 		return Objects.equals(city, other.city) && id == other.id && Objects.equals(name, other.name)
 				&& Double.doubleToLongBits(salary) == Double.doubleToLongBits(other.salary);
 	}
-	
-	
-=======
-public class Employee {
->>>>>>> 8fa7f4369403d3fd464d38d17eb824e3653d2985
-
 }
+	
+	
