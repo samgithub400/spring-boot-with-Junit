@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.ios.entity.User;
+import com.ios.entity.Users;
 import com.ios.exception.UserNotFoundException;
 import com.ios.repository.UserRepository;
 
@@ -17,11 +17,11 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public User getUser(int userId) {
+	public Users getUser(int userId) {
 		return userRepository.findById(userId).get();
 	}
 
-	public User saveUser(User user) {
+	public Users saveUser(Users user) {
 		return userRepository.save(user);
 	}
 
@@ -33,17 +33,32 @@ public class UserService {
 		return new ResponseEntity<>("User Deleted..!", HttpStatus.NO_CONTENT);
 	}
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	public User updateUser(User user, int userId) throws UserNotFoundException {
+<<<<<<< HEAD
+		User foundUser = userRepository.findById(userId)
+				.orElseThrow(() -> new UserNotFoundException("User Not Found With USerId : " + userId));
+=======
+=======
+>>>>>>> Stashed changes
+	public Users updateUser(Users user, int userId) throws UserNotFoundException {
 		if(!userRepository.existsById(userId)) {
 			throw new UserNotFoundException("User Not Found With USerId : " + userId);
 		}				
+>>>>>>> Stashed changes
+=======
+		if(!userRepository.existsById(userId)) {
+			throw new UserNotFoundException("User Not Found With USerId : " + userId);
+		}				
+>>>>>>> 8fa7f4369403d3fd464d38d17eb824e3653d2985
 
 		user.setUserId(userId);
 		return userRepository.save(user);
 
 	}
 
-	public List<User> getAllUsers() {
+	public List<Users> getAllUsers() {
 		return userRepository.findAll();
 	}
 
