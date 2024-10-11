@@ -31,10 +31,13 @@ public class UserService {
 	}
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	public User updateUser(User user, int userId) throws UserNotFoundException {
 		User foundUser = userRepository.findById(userId)
 				.orElseThrow(() -> new UserNotFoundException("User Not Found With USerId : " + userId));
 =======
+=======
+>>>>>>> Stashed changes
 	public Users updateUser(Users user, int userId) throws UserNotFoundException {
 		if(!userRepository.existsById(userId)) {
 			throw new UserNotFoundException("User Not Found With USerId : " + userId);

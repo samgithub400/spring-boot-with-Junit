@@ -15,8 +15,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import com.ios.entity.User;
 =======
+=======
+>>>>>>> Stashed changes
 import com.ios.entity.Users;
 import com.ios.exception.UserNotFoundException;
 >>>>>>> Stashed changes
@@ -34,13 +37,19 @@ public class UserServiceTest {
 =======
 	
 	private Users exstingUser;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.openMocks(this);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 		exstingUser= new Users();
 		exstingUser.setUserId(1);
 		exstingUser.setUerName("user1");
